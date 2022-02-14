@@ -43,7 +43,7 @@ body {
     position: absolute;
     top: 35%;
     left: -8px;
-    width: 18px;
+    width: 22px;
     padding: 5px;
     color: #222;
     border-radius: 50%;
@@ -53,7 +53,7 @@ body {
     position: absolute;
     top: 35%;
     right: -8px;
-    width: 18px;
+    width: 22px;
     border-radius: 50%;
     padding: 5px;
     background-color: white;
@@ -63,6 +63,38 @@ body {
     position: absolute;
     top: -25px;
     right: 0;
+    width: 22px;
     background-color: white;
+}
+
+@media screen and (min-width: 501px) and (max-width: 992px) {
+    .image2 {
+        width: 45%;
+    }
+
+    .back {
+        width: 24px;
+    }
+    .front {
+        width: 24px;
+    }
+    .close {
+        width: 24px;
+    }
+}
+@media screen and (max-width: 500px) {
+    .image2 {
+        width: 75%;
+    }
+
+    .back {
+        width: 21px;
+    }
+    .front {
+        width: 21px;
+    }
+    .close {
+        width: 21px;
+    }
 }
 

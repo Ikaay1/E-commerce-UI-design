@@ -14,15 +14,15 @@ const Collection = (props) => {
 
     return (
         <section className='second'>
-            {props.check ? <Modal imgsrc={props.imgsrc} /> : null}
+            {props.check ? <Modal imgsrc={props.imgsrc} close={props.close} handleClick={props.handleClick} move={props.move} /> : null}
             <div className="container cont">
                 <div className="image">
-                    <img src={image1} onClick={props.handleClicktwo} className='bigimg' alt="canvas shoe" />
+                    <img src={props.imgsrc} onClick={props.handleClicktwo} className='bigimg' alt="canvas shoe" />
                     <div className="small">
-                        <img src={img1} onClick={(e) => props.handleClick(e, '.bigimg')} className='smallimg' alt="canvas shoe" />
-                        <img src={img2} onClick={(e) => props.handleClick(e, '.bigimg')} className='smallimg' alt="canvas shoe" />
-                        <img src={img3} onClick={(e) => props.handleClick(e, '.bigimg')} className='smallimg' alt="canvas shoe" />
-                        <img src={img4} onClick={(e) => props.handleClick(e, '.bigimg')} className='smallimg' alt="canvas shoe" />
+                        <img src={img1} onClick={props.handleClick} className='smallimg' alt="canvas shoe" />
+                        <img src={img2} onClick={props.handleClick} className='smallimg' alt="canvas shoe" />
+                        <img src={img3} onClick={props.handleClick} className='smallimg' alt="canvas shoe" />
+                        <img src={img4} onClick={props.handleClick} className='smallimg' alt="canvas shoe" />
                     </div>
                 </div>
                 <div className="texts">
@@ -45,7 +45,7 @@ const Collection = (props) => {
                         <span className="zero">{props.num}</span>
                         <img src={plus} onClick={(e) => props.mathClick(e, '.zero')}  className='plus' alt="plus icon" />
                     </span>
-                    <button className="btn cartbtn" onClick={(e) => props.click(e, '.zero')}>
+                    <button className="btn cartbtn" onClick={props.click}>
                         <img src={cart} className='iconcart' alt="cart icon" />
                         Add to cart
                     </button>

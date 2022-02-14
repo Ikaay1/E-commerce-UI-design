@@ -19,18 +19,16 @@ function App() {
   const [order, setOrder] = useState('')
   const [open, setOpen] = useState(false)
   const [check, setCheck] = useState(false)
-  const [imgsrc, setImgsrc] = useState('')
+  const [imgsrc, setImgsrc] = useState(image1)
   const [bin, setBin] = useState(true)
   const [num, setNum] = useState(0)
 
-  const cartClick = (e, cls) => {
+  const cartClick = (e) => {
     setBin(true)
-    const nummm = document.querySelector(cls)
-    const numm = parseInt(nummm.textContent)
-    if (numm === 0){
+    if (num === 0){
       return;
     }
-    setOrder(numm)
+    setOrder(num)
   }
 
   const iconClick = () => {
@@ -46,20 +44,18 @@ function App() {
   
     
 
-    const handleClick = (e, cls) => {
-        const image = document.querySelector(cls)
+    const handleClick = (e) => {
         if (e.target.getAttribute('src') === img1) {
-            image.setAttribute('src', image1)
-            console.log(image.getAttribute('src'))
+            setImgsrc(image1)
         }
         if (e.target.getAttribute('src') === img2) {
-            image.setAttribute('src', image2)
+            setImgsrc(image2)
         }
         if (e.target.getAttribute('src') === img3) {
-            image.setAttribute('src', image3)
+            setImgsrc(image3)
         }
         if (e.target.getAttribute('src') === img4) {
-            image.setAttribute('src', image4)
+            setImgsrc(image4)
         }
     }
 
@@ -69,7 +65,7 @@ function App() {
     }
 
     const mathClick = (e, cls) => {
-      setOpen(false)
+        setOpen(false)
         const num = document.querySelector(cls)
         if (e.target.className === "minus") {
             if (parseInt(num.textContent) === 0) return;
@@ -80,10 +76,45 @@ function App() {
         }
     }
 
+    const closeClick = () => {
+      setCheck(false)
+    }
+
     const binClick = (e, cls) => {
       setBin(false)
       setOrder('')
       setNum(0)
+    }
+
+    const moveClick = (e) => {
+        if (e.target.className === "front") {
+          if (imgsrc === image1) {
+            setImgsrc(image2)
+          }
+          if (imgsrc === image2) {
+            setImgsrc(image3)
+          }
+          if (imgsrc === image3) {
+            setImgsrc(image4)
+          }
+          if (imgsrc === image4) {
+            setImgsrc(image1)
+          }
+        }
+        if (e.target.className === "back") {
+          if (imgsrc === image1) {
+            setImgsrc(image4)
+          }
+          if (imgsrc === image2) {
+            setImgsrc(image1)
+          }
+          if (imgsrc === image3) {
+            setImgsrc(image2)
+          }
+          if (imgsrc === image4) {
+            setImgsrc(image3)
+          }
+        }
     }
 
   return (
@@ -91,7 +122,7 @@ function App() {
     <BrowserRouter>
         <div className="App">
         <Navbar order={order} clk={iconClick} />
-        <Route path='/' component={() => (<Collection click={cartClick} open={open} handleClick={handleClick} handleClicktwo={handleClicktwo} mathClick={mathClick} check={check} imgsrc={imgsrc} num={num} order={order} bin={bin} binclk={binClick} />)} />
+        <Route path='/' component={() => (<Collection click={cartClick} open={open} handleClick={handleClick} handleClicktwo={handleClicktwo} mathClick={mathClick} check={check} imgsrc={imgsrc} num={num} order={order} bin={bin} binclk={binClick} close={closeClick} move={moveClick} />)} />
     </div>
     </BrowserRouter>
     
