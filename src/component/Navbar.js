@@ -14,7 +14,8 @@ const Navbar = (props) => {
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#navmenu"
-                >
+                >   
+                    <div class='ordersec'>{props.order}</div>
                     <span className="navbar-toggler-icon"></span>
                 </button>
                     <div className="collapse navbar-collapse" id="navmenu">

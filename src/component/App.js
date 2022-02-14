@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import './App.css';
+import 'bootstrap/dist/js/bootstrap.min.js'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './Navbar'
 import Collection from './Collection'
