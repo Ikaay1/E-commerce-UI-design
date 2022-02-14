@@ -285,7 +285,7 @@ body {
         position: absolute;
         height: 15%;
         top: 0%;
-        right: 25%;
+        right: 23%;
     }
 
     .shoeimg {
@@ -299,7 +299,7 @@ body {
     .cartt {
         position: absolute;
         top: 0;
-        right: 41%;
+        right: 38%;
         cursor: pointer;
     }
     
