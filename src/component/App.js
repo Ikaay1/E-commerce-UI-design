@@ -83,6 +83,7 @@ function App() {
     const binClick = (e, cls) => {
       setBin(false)
       setOrder('')
+      setNum(0)
     }
 
   return (
